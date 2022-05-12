@@ -1,0 +1,63 @@
+
+# !!!  1. pravidlo třídy s VELKÝM PÍSMENEM  !!!
+
+class Person:
+    # musí tu být tahle poznámka
+    """
+    class that represents a person
+    """
+
+    def __init__(self, _name, _birth, _email_address):
+        self.name = _name
+        self.birth = _birth
+        self.email_address = _email_address
+        self.__address = None
+
+    def getAge(self):
+        return 2022 - self.birth
+
+    def purchase_parking_pass(self):
+        pass
+
+    def get_address(self):
+        return self._address = 
+        pass
+
+
+    def __str__(self):
+        return
+
+
+class Profesor(Person):
+    """
+    třída profesora
+    """
+    def __init__(self, _salary, _trida profesora, _name, _birth, _email_address):
+        super().__init__(_name, _birth, _email_address)
+        self.salary = _salary
+        self.trida profesora =  _trida profesora
+
+
+class Student(person):
+    """
+    třída studenta
+    """
+    def __init__(self):
+        pass
+
+
+class Address:
+    """
+    sdhdjgmsrz
+    """
+    def __init__(self):
+
+
+
+p1 = Person(
+    _name="Peter",
+    _birth=2000,
+    _email_address="peter@parker.com"
+)
+
+print(p1.getAge())
