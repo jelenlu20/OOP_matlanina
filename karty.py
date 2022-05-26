@@ -30,13 +30,17 @@ class Balicek:
         for barva in barvy:
             for hodnota in hodnoty:
                 self.__karty.append(karta(barva, hodnota))
+        self.zamichat()
 
     def zamichat(self):
-            pass
+        random.shuffle(self.__karty)
 
     def vypis_balicek(self):
         for karta in self.__karty:
             karta.vypis_kartu()
+
+    def vydat_kartu(self):
+        return self.__karty.pop()
 
 
 
@@ -50,7 +54,7 @@ class Hrac:
         self.__ruka.append(karta)
 
     def vypis_karty(self):
-        for karta in self.__karty:
+        for karta in self.__ruka:
             karta.vypis_kartu()
 
 class Krupier:
@@ -73,8 +77,8 @@ class Krupier:
 
 
 b1 = Balicek()
-h1 = ("ksuyzrg")
-b1.vypis_balicek()
+#b1.vypis_balicek()
+h1 = Hrac("Lukas")
 k1 = Krupier()
 k1.lizni(2, b1)
 k1.rozdej(2, h1, b1)
