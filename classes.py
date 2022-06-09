@@ -38,7 +38,7 @@ class Profesor(Person):
         self.trida profesora =  _trida profesora
 
 
-class Student(person):
+class Student(Person):
     """
     třída studenta
     """
@@ -61,3 +61,41 @@ p1 = Person(
 )
 
 print(p1.getAge())
+
+
+
+
+
+# dekorátor ---------------
+
+class PersonA:
+
+    def __init__(self):
+        self.__money = 0
+        self.birth = 2006
+
+    @property
+    def money(self):
+        return self.__money
+
+    @money.setter
+    def money(self, amount):
+        if not self.__money + amount < 0:
+            self.__money += amount
+        else:
+            print("Nemáš dostatek peněz")
+
+    # - ???
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, new_name):
+        if len(str(new_name)) >=1
+            self.__name = new_name
+
+    @name.getter
+    def name(self):
+        pass
