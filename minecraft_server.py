@@ -36,6 +36,21 @@ class Inventar:
         self.itemy = [],
         self.brneni = []
 
+    @property
+    def pridat_item (self):
+        return itemy
+
+    @pridat_item.setter
+    def pridat_item (self, novy_item):
+        pass
+    # -------------------------
+    @property
+    def odebrat_item(self):
+        return itemy
+
+    @odebrat_item.setter
+    def odebrat_item(self, zahozeny_item):
+        pass
 
 
 class Item:
@@ -70,12 +85,12 @@ class Server:
         return self.__IP
     # -------------------------
     @property
-    def pripojit_hrace(self, nickname, max_hracu):
+    def pripojit_hrace(self):
         return nickname
 
     @pripojit_hrace.setter
-    def pripojit_hrace(self):
-        if len(hraci_online) < max_hracu:
+    def pripojit_hrace(self, nickname, max_hracu):
+        if len(hraci_online) < self.max_hracu:
             hraci_online.insert(len(hraci_online), nickname)
 
 
@@ -94,11 +109,11 @@ class Svet:
 
 h1 = Hrac("Zdenda", "1.18")
 
-h1 = Hrac("Ludek123", "1.18")
+h2 = Hrac("Ludek123", "1.18")
 
-h1 = Hrac("Plechac73", "1.15")
+h3 = Hrac("Plechac73", "1.15")
 
 
 s = Server()
-#s.nickname =
-s.pripojit_hrace()
+s.pripojit_hrace(h1.vypis_nick)
+print(s.pripojit_hrace)
