@@ -5,7 +5,7 @@ class Hrac:
     """
 
     def __init__(self, _nickname, _verze_hry):
-        self.nick = _nickname,
+        self.nick = _nickname
         self.verzeH = _verze_hry
 
     @property
@@ -32,13 +32,21 @@ class Inventar:
     """
 
     def __init__(self, _pocet_zivotu):
-        self.zivoty = _pocet_zivotu,
-        self.itemy = [],
+        self.zivoty = _pocet_zivotu
+        self.itemy = []
         self.brneni = []
 
     @property
+    def uprava_zivotu(self):
+        return self.zivoty
+
+    @uprava_zivotu.setter
+    def uprava_zivotu(self, aktualni_zivoty: int):
+        self.zivoty = aktualni_zivoty
+    # -------------------------
+    @property
     def pridat_item (self):
-        return itemy
+        return self.itemy
 
     @pridat_item.setter
     def pridat_item (self, novy_item):
@@ -59,8 +67,8 @@ class Item:
     """
 
     def __init__(self, _nazev, _typ, _durabilita):
-        self.nazev = _nazev,
-        self.typ = _typ,
+        self.nazev = _nazev
+        self.typ = _typ
         self.durabilita = _durabilita
 
 
@@ -71,9 +79,9 @@ class Server:
     """
 
     def __init__(self):
-        self.nazev = "ZdendaCraft",
-        self.__IP = "play.zdenda-craft.cz",
-        self.hraci_online = [],
+        self.nazev = "ZdendaCraft"
+        self.__IP = "play.zdenda-craft.cz"
+        self.hraci_online = []
         self.max_hracu = 10
 
     @property
@@ -101,8 +109,8 @@ class Svet:
     """
 
     def __init__(self, _nazev, _typ_hry, _verze_sveta):
-        self.nazev = _nazev,
-        self.typ_hry = _typ_hry,
+        self.nazev = _nazev
+        self.typ_hry = _typ_hry
         self.verzeS = _verze_sveta
 
 # --------------------------------------------------
